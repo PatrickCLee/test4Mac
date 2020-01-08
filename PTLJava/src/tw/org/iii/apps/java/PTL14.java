@@ -1,11 +1,11 @@
 package tw.org.iii.apps.java;
-
+// Math.random()擲骰子
 public class PTL14 {
 
 	public static void main(String[] args) {
 		int n1, n2, n3, n4, n5, n6;
 		n1 = n2 = n3 = n4 = n5 = n6 = 0;
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 100000; i++) {
 			int ran = (int) (Math.random() * 6 + 1);
 			switch (ran) {
 			case 1:

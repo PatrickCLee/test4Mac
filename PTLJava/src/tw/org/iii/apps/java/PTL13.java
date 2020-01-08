@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// array宣告方式
 public class PTL13 {
 
 	public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class PTL13 {
 		int[] e;
 		e = new int[] { 9, 8, 7, 6 };
 		int[] f;
-//		f={9,8,7,6}; // don't do this, do d[] or e[]
+//		f={9,8,7,6}; // can't do this, do d[] or e[]
 	}
 
 }

@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// 交換a, b的值 : XOR ^
 public class PTL18 {
 
 	public static void main(String[] args) {

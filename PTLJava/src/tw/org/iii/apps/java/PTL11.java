@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// for的定義及運用方式
 public class PTL11 {
 
 	public static void main(String[] args) {

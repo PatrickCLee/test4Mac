@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// enhanced for loop
 public class PTL16 {
 
 	public static void main(String[] args) {

@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// 擲骰子變化版, 調整機率
 public class PTL15 {
 
 	public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class PTL15 {
 
 		if (num[0] == 0) {
 			for (int i = 1; i <= 6; i++) {
-				System.out.printf("%d點出現%d次\n", i, num[i]);
+				System.out.printf("%d點出現%4d次\n", i, num[i]);
 			}
 		}
 

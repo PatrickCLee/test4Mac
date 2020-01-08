@@ -13,16 +13,23 @@ public class PTL07 {
 			if (year % 100 == 0) {
 				if (year % 400 == 0) {
 					// 29
+					System.out.println("Y");
 				} else {
 					// 28
 				}
 			} else {
 				// 29
+				System.out.println("Y");
 			}
 		} else {
 			// 28
 		}
-
+		if(year%4==0 && (year%100!=0 || year%400==0)) {
+			System.out.println("2Y");
+		}
+		if(year%400==0 || (year%4==0 && year%100!=0)) {
+			System.out.println("3Y");
+		}
 	}
 
 }

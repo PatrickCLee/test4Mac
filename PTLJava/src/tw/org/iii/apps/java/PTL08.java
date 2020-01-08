@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// 運算在判斷前或後, 邏輯運算&&||及位元運算&|^
 public class PTL08 {
 
 	public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class PTL08 {
 		System.out.println(x & y);
 		System.out.println(x | y);
 		System.out.println(x ^ y);
-
+	
 	}
 
 }

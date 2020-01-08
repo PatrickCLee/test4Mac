@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// 可自由調整單列顯示幾欄幾列及開始數字
 public class PTL99 {
 
 	public static void main(String[] args) {

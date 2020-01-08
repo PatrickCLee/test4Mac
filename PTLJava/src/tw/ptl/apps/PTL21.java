@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-// 搭配Bike Scooter
+// 搭配Bike Scooter 物件建立
 import tw.org.iii.apps.java.Bike;
 import tw.org.iii.apps.tool.Scooter;
 
