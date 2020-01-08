@@ -5,12 +5,9 @@ import javax.swing.JOptionPane;
 public class PTL02 {
 
 	public static void main(String[] args) {
-		String x = JOptionPane.showInputDialog("input a number");
-		String y = JOptionPane.showInputDialog("input a number");
-		int intX = Integer.parseInt(x);
-		int intY = Integer.parseInt(y);
-		int intR = intX + intY;
-		JOptionPane.showMessageDialog(null, intX + "+" + intY + "=" + intR);
+		byte a = 10, b = 3;
+		int c = a + b; // byte, short, int => int
+		long d = 12;
+		long e = c + d;
 	}
-
 }
