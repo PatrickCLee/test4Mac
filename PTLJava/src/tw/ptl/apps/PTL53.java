@@ -16,8 +16,6 @@ public class PTL53 {
 		}catch(Exception e) {
 			
 		}
-		System.out.println("test");
-		System.out.println("really?");
 	}
 
 }
