@@ -1,5 +1,5 @@
 package tw.org.iii.apps.tool;
-//搭配PTL27
+//搭配PTL27 29
 public class Student {	
 	private String name;
 	private int ch, eng, math;

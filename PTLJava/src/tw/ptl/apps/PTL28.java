@@ -1,6 +1,6 @@
 package tw.ptl.apps;
-// 玩視窗及按鈕 以及解釋interface和多型   1/4新增listener
-import java.awt.FlowLayout;
+// FlowLayout玩視窗及按鈕 以及解釋interface和多型   1/4新增listener
+import java.awt.FlowLayout;	
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

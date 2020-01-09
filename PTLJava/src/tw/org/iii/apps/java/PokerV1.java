@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// 取得亂數, 依序塞入array, 若數字重複則重跑迴圈
 public class PokerV1 {
 
 	public static void main(String[] args) {

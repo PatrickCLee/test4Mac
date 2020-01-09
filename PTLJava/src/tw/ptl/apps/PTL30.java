@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-// 用樂高組積木的概念拼出視窗 繼承JFrame，創小物件，拼裝，再用主體加上拼裝物
+// BorderLayout, JPanel 用樂高組積木的概念拼出視窗 繼承JFrame，創小物件，拼裝，再用主體加上拼裝物
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,18 +11,28 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
+// 將code改為先問猜幾位數  新增input錯誤 
 public class PTL30 extends JFrame implements ActionListener {
 	private JButton guess;			//宣告在此因為等一下還要用
 	private JTextField input;		//宣告在此因為等一下還要用
 	private JTextArea log;
 	private String answer;
 	private int counter;
+	private int len;
 	
 	public PTL30() {
 		super("Guess Game");
+		
+		String length = JOptionPane.showInputDialog("請輸入要猜幾位數");		
+		len = Integer.parseInt(length);
 
-		initView();					//原本的code全部丟出去一個method 方便維護
+		while(len>5||len<3) {
+			JOptionPane.showMessageDialog(null, "只能猜3到5位數");
+			length = JOptionPane.showInputDialog("請輸入要猜幾位數");
+			len = Integer.parseInt(length);
+		}
+		
+		initView();					//丟出去一個method 方便維護
 		
 		initRound();
 		guess.addActionListener(this);
@@ -35,7 +45,7 @@ public class PTL30 extends JFrame implements ActionListener {
 
 	private void initRound() {
 		counter = 0;
-		answer = createAnswer(3);
+		answer = createAnswer(len);
 		log.setText("");
 		System.out.println(answer);
 	}
@@ -67,7 +77,7 @@ public class PTL30 extends JFrame implements ActionListener {
 	
 	boolean checkGuess(String g, int len) {		// 整段抄來用
 		boolean ret = false;
-		if (g.matches("^[0-9]{" + len + "}$")) { // ^開頭,[]裡面的字元出現(預設一次) ,{8}出現8次,$結尾
+		if (g.matches("^[0-9]{" + len + "}$")) { 
 			boolean isDup = false;
 			for (int i = 0; i < len - 1; i++) { // 往後檢查是否有重複 最後一個字元不用檢查
 				char c = g.charAt(i);
@@ -85,8 +95,9 @@ public class PTL30 extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		String userInput = input.getText();
 
-		if (checkGuess(userInput,3)==false) {
-			input.setText("Wrong Input, try again!");
+		if (checkGuess(userInput, len)==false) {
+			JOptionPane.showMessageDialog(log, "you fool!");
+			input.setText("");
 		} else {
 			counter++;
 			String result = checkAB(answer, userInput);
@@ -94,9 +105,9 @@ public class PTL30 extends JFrame implements ActionListener {
 
 			input.setText("");
 
-			if (result.equals("3A0B")) {
+			if (result.equals( len +"A0B")) {
 				showPromptDialog(true);
-			} else if (counter == 20) {
+			} else if (counter == 10) {
 				showPromptDialog(false);
 			}
 		}

@@ -4,7 +4,7 @@ public class TWId {
 	private String id;
 	private static String letters = "ABCDEFGHJKLMNPQRSTUVXYWZIO"; // 參考身份證 wiki
 
-	// 為了維護方便，呼叫限制最嚴格的，其他的才都可以呼叫
+	// 為了維護方便，呼叫參數最多的，其他的才都可以呼叫
 	public TWId() {
 		this((int) (Math.random() * 2) == 0); 
 	}

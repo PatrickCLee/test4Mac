@@ -36,7 +36,7 @@ public class PTL24 {
 
 	boolean checkGuess(String g, int len) {
 		boolean ret = false;
-		if (g.matches("^[0-9]{" + len + "}$")) { // ^開頭,[]裡面的字元出現(預設一次) ,{8}出現8次,$結尾
+		if (g.matches("^[0-9]{" + len + "}$")) { // ^開頭,[ ]裡面的字元出現(預設一次) ,{8}出現8次,$結尾
 			boolean isDup = false;
 			for (int i = 0; i < len - 1; i++) { // 往後檢查是否有重複 最後一個字元不用檢查
 				char c = g.charAt(i);

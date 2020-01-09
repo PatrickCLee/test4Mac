@@ -1,5 +1,5 @@
 package tw.org.iii.apps.java;
-
+// 亂數給值, 裡面包do while的寫法
 public class PokerV2 {
 
 	public static void main(String[] args) {
