@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-// 講解例外
+// exception
 import java.io.IOException;
 
 public class PTL37 {

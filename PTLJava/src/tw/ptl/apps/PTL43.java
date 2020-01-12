@@ -10,7 +10,7 @@ public class PTL43 {
 					new FileInputStream("dir2/file3.txt");
 			int c;
 			while( (c = fin.read() )!= -1) {  //判斷同時給值
-			System.out.print((char)c);
+			System.out.print((char)c);		//強制轉型
 			}
 			
 //			while( fin.read() != -1) {		//此段不行，因每執行一次.read()
@@ -22,7 +22,8 @@ public class PTL43 {
 //				System.out.print((char)fin.read());
 //			}
 			
-			fin.close();
+			fin.close();	//Stream有開就要關，建立時已開
+			System.out.println();
 			System.out.println("OK");
 		} catch (Exception e) {
 			System.out.println(e.toString());

@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-
+// 一次讀3bytes
 import java.io.FileInputStream;
 
 public class PTL45 {
@@ -12,7 +12,7 @@ public class PTL45 {
 				System.out.print(new String(buf));
 			}
 			
-//			while (fin.available() > 0) {
+//			while (fin.available() > 0) {		//遇到中文就破功
 //				System.out.print((char)fin.read());
 //			}
 			

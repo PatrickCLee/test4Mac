@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-//測試 複製貼上 讀檔案 寫一遍讀到的檔案
+//測試 複製貼上 讀寫分開 先讀檔案 再寫一遍讀到的檔案
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,7 +14,7 @@ public class PTL48 {
 			FileInputStream fin = 
 					new FileInputStream(src);
 			
-			byte[] buf = new byte[(int)src.length()];//一次把資料丟到buffer
+			byte[] buf = new byte[(int)src.length()];//一次把資料丟到buffer，記得int限制所以檔案只能2G以內
 			fin.read(buf);
 			fin.close();
 			
