@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-// 只要接兩個管子的寫法
+// 結合49 50的寫法, 只要接兩個管子
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -13,13 +13,13 @@ public class PTL51 {
 			String line;
 			while( (line = reader.readLine()) != null ) {
 				String[] data = line.split(",");
-				System.out.println(data[1]);
+				System.out.println(data[2]);
 			}
 			
 			reader.close();			//一個關全部關
 			
 		} catch (Exception e) {
-			
+			System.out.println(e.toString());
 		}
 	}
 

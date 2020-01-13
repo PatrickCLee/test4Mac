@@ -8,14 +8,16 @@ public class PTL50 {
 
 	public static void main(String[] args) {
 		try {
-			FileInputStream fin = 
+			FileInputStream fin = 	//想像串流管子一根接一根，換管子的意義在有各自不同的功能 
 					new FileInputStream("dir2/Book1.csv");
 			InputStreamReader irs = 
 					new InputStreamReader(fin);
-			BufferedReader reader =
+			BufferedReader reader =			//使用BufferReader是因其可一次讀一列
 					new BufferedReader(irs);
 			String line;
 			while( (line = reader.readLine()) != null ) {
+//				System.out.println(line);
+
 				String[] data = line.split(",");
 				System.out.println(data[1]);
 			}
@@ -23,7 +25,7 @@ public class PTL50 {
 			fin.close();			//一個關全部關
 			
 		} catch (Exception e) {
-			
+			System.out.println(e.toString());
 		}
 	}
 
