@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-// read
+// read, 指標的概念
 import java.io.FileInputStream;
 
 public class PTL43 {
@@ -14,7 +14,7 @@ public class PTL43 {
 			}
 			
 //			while( fin.read() != -1) {		//此段不行，因每執行一次.read()
-//				int a = fin.read();			//指標就會指向next byte
+//				int a = fin.read();			//**指標就會指向next byte
 //				System.out.println((char)a);//判斷執行一次，code又執行一次
 //			}
 			
