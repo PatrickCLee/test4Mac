@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-//TCP server端
+// TCP server端 接收, 第一步確認收到, 第二步建立串流收資料
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,8 +12,8 @@ public class PTL62 {
 	public static void main(String[] args) {
 		while (true) {
 			try {
-				ServerSocket server = new ServerSocket(7777);	//做出物件實體
-				Socket socket = server.accept();		//等候，直到有人傳進來
+				ServerSocket server = new ServerSocket(7003);	//做出物件實體
+				Socket socket = server.accept();		//等候，直到有人傳進來；回傳Socket物件
 				InputStream in = socket.getInputStream();	//取得進來的管道
 				
 				InetAddress urip = socket.getInetAddress();
@@ -29,6 +29,7 @@ public class PTL62 {
 				server.close();
 			}catch(Exception e) {
 				System.out.println(e.toString());
+				break;
 			}
 		}
 	}
