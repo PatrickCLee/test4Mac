@@ -9,10 +9,10 @@ public class PTL61 {
 	public static void main(String[] args) {
 		try {
 			Socket socket = new Socket(
-					InetAddress.getByName("192.168.0.9"), 7003);	//要先說要通到哪裡去 port號 此敘述句即會嘗試對方是否願意進行三方交握 若拋出例外則表示對方不願意
+					InetAddress.getByName("192.168.0.9"), 7003);//要先說要通到哪裡去 port號 此敘述句即會嘗試對方是否願意進行三方交握 若拋出例外則表示對方不願意
 			OutputStream out = socket.getOutputStream();	//建立對話管道，回傳OutputStream
 			
-			out.write("byeHello, Bread\nphphphph".getBytes());	//將資料送出(轉成byte陣列)
+			out.write("whyHello, Bread\nhahaha".getBytes());	//將資料送出(轉成byte陣列)
 			
 			out.flush();
 			out.close();
