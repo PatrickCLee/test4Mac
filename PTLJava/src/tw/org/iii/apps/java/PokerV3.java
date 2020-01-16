@@ -9,7 +9,7 @@ public class PokerV3 {
 		for (int i = 0; i < poker.length; i++)
 			poker[i] = i;
 
-		for (int i = poker.length - 1; i > 0; i--) {//隨機與最後一張牌i交換
+		for (int i = poker.length - 1; i > 0; i--) {//從尾巴開始與前面隨機一張牌交換
 			int ran = (int) (Math.random() * (i + 1)); // ran here represents the index
 			// poker[ran] <=> poker[i]
 			int temp = poker[ran];
