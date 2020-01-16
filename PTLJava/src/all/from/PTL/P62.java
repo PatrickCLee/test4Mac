@@ -1,13 +1,12 @@
 package all.from.PTL;
-// 練習傳檔案
-// TCP server端 接收, 第一步確認收到, 第二步建立串流收資料
-import java.io.File;
+// 練習傳檔案 接收端
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.io.File;
 
 public class P62 {
 
