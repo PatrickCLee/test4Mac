@@ -7,9 +7,9 @@ public class PTL37 {
 	public static void main(String[] args) {
 		PTL371 obj1 = new PTL371();
 		try {
-		obj1.m1(1);
+		obj1.m1(6);
 		}catch(Exception e) {
-			
+			System.out.println("exception");
 		}
 	}
 
