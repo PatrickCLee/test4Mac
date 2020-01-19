@@ -21,12 +21,15 @@ import javax.swing.JPanel;
 
 public class MyDrawer extends JPanel{	//繼承JPanel, MyD可稱為自訂視窗元件	
 	private LinkedList<LinkedList<HashMap<String, Integer>>> lines, recycle; //用LL存放XY座標資料構成線, 用HM表示, 一條線不夠, 再包一層做很多條線
+	private Color color;
 	
 	public MyDrawer() {
 		setBackground(Color.YELLOW);
 		
 		lines = new LinkedList<>();
 		recycle = new LinkedList<>();
+		
+		color = Color.BLUE;
 		
 		MyMouseListener listener = new MyMouseListener();
 		addMouseListener(listener);
@@ -46,7 +49,7 @@ public class MyDrawer extends JPanel{	//繼承JPanel, MyD可稱為自訂視窗�
 		super.paintComponent(g);
 		
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.setColor(Color.BLUE);
+		g2d.setColor(color);
 		g2d.setStroke(new BasicStroke(3));
 		
 		for(LinkedList<HashMap<String, Integer>> line : lines ) {	//巡訪每條線, 後來多線時用這塊包住
@@ -110,6 +113,12 @@ public class MyDrawer extends JPanel{	//繼承JPanel, MyD可稱為自訂視窗�
 		}
 		oin.close();
 	}
+
+	public void setLineColor(Color newColor) {
+		color = newColor;
+		repaint();
+	}
+	public Color getLineColor() {return color;}
 	
 	private class MyMouseListener extends MouseAdapter{	//內部類別
 		@Override
