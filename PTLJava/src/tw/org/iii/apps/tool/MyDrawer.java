@@ -8,7 +8,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -27,6 +31,14 @@ public class MyDrawer extends JPanel{	//繼承JPanel, MyD可稱為自訂視窗�
 		MyMouseListener listener = new MyMouseListener();
 		addMouseListener(listener);
 		addMouseMotionListener(listener);
+	}
+	public MyDrawer(File newFile) {		//打開時直接讀指定檔案
+		this();
+		try {
+			loadObj(newFile);
+		} catch (Exception e) {
+
+		}
 	}
 	
 	@Override
@@ -67,19 +79,36 @@ public class MyDrawer extends JPanel{	//繼承JPanel, MyD可稱為自訂視窗�
 			repaint();			
 		}
 	}
-	public void saveJPEG(File file) {
-		BufferedImage img = new BufferedImage(	//創造空白畫布 
+	public void saveJPEG(File file) {			//要存JFrame可用print(Graphics g), 所以以下流程
+		BufferedImage img = new BufferedImage(	//記憶體創出空白畫布 
 				getWidth(), getHeight(), 
 				BufferedImage.TYPE_INT_RGB);
 		
-		Graphics g = img.getGraphics();		
-		print(g);								//把現在的畫面畫到空白畫布上
+		Graphics g = img.getGraphics();			//轉為G的型態
+		print(g);								//用myDrawer的功能print()把現在的畫面畫到空白畫布上
 		try {
 			ImageIO.write(img, "jpg", file);	//也可以不要存檔, 只把畫面io出去
 		} catch(IOException e) {
 			System.out.println(e.toString());
 		}
 		
+	}
+	public void saveObj(File file) throws Exception{	//存成物件, 讀取以後還可以undo, redo
+		ObjectOutputStream oout = new ObjectOutputStream(new FileOutputStream(file));
+		oout.writeObject(lines);			//lines為LL, 已有實做序列化
+		oout.flush();
+		oout.close();
+	}
+	public void loadObj(File file) throws Exception{
+		ObjectInputStream oin = new ObjectInputStream(new FileInputStream(file));
+		Object obj = oin.readObject();
+		if(obj instanceof LinkedList) {
+			lines = (LinkedList<LinkedList<HashMap<String, Integer>>>)obj;
+			repaint();
+		}else {
+			throw new Exception();
+		}
+		oin.close();
 	}
 	
 	private class MyMouseListener extends MouseAdapter{	//內部類別
