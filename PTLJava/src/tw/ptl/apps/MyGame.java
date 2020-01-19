@@ -62,7 +62,7 @@ public class MyGame extends JFrame{
 			int ballX, ballY;
 			BallTask(int ballX, int ballY){
 				dx = dy = 4;
-				this.ballX = ballX; this.ballX = ballY;
+				this.ballX = ballX; this.ballY = ballY;
 			}
 			@Override
 			public void run() {
