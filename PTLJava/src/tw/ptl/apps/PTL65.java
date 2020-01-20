@@ -11,7 +11,7 @@ public class PTL65 {
 	public static void main(String[] args) {
 		String myurl = "https://www.gamer.com.tw";
 		try {
-			URL url = new URL("https://pdfmyurl.com/?url=" + myurl);	
+			URL url = new URL("https://pdfmyurl.com/?url=" + myurl); //看到sourceCode的form底下input的name是url,  
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.connect();
 			
