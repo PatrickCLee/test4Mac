@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-//爬蟲之後用它內部連結方式直接使用功能，跳過按鈕觸發視窗……
+//爬蟲之後, 跳過按鈕觸發視窗, 直接運行功能
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
@@ -11,7 +11,7 @@ public class PTL65 {
 	public static void main(String[] args) {
 		String myurl = "https://www.gamer.com.tw";
 		try {
-			URL url = new URL("https://pdfmyurl.com/?url=" + myurl); //看到sourceCode的form底下input的name是url,  
+			URL url = new URL("https://pdfmyurl.com/?url=" + myurl); //看到sourceCode的form底下input的name是url, http協議:問號帶參數?key=value 
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.connect();
 			
