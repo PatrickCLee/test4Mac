@@ -25,7 +25,7 @@ public class MySignature extends JFrame{
 		myDrawer = new MyDrawer();
 		add(myDrawer, BorderLayout.CENTER);
 		
-		JPanel topLine = new JPanel(new FlowLayout());
+		JPanel topLine = new JPanel(new FlowLayout());	//FL不帶參數的建構式預設align center
 		clear = new JButton("Clear");
 		clear.addActionListener(new ActionListener() {
 			@Override
@@ -55,7 +55,7 @@ public class MySignature extends JFrame{
 		saveJPEG.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				myDrawer.saveJPEG(new File("dir2/ptl.jpg"));
+				myDrawer.saveJPEG(new File("dir2/ptl.jpg"));	//saveJPEG method需帶入參數指定位置, 參考MyD
 			}
 		});
 		saveObj = new JButton("Save Obj");
@@ -63,7 +63,7 @@ public class MySignature extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					myDrawer.saveObj(new File("dir2/ptl.drawer"));
+					myDrawer.saveObj(new File("dir2/ptl.drawer"));	//示範用故直接寫好路徑
 				} catch (Exception e1) {
 				}
 			}
@@ -73,7 +73,7 @@ public class MySignature extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					myDrawer.loadObj(new File("dir2/ptl.drawer"));
+					myDrawer.loadObj(new File("dir2/ptl.drawer"));	//示範用故直接寫好路徑
 				} catch (Exception e1) {
 				}
 			}

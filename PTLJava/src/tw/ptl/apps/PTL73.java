@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-
+// timer ; timerTask 類似JS的setInterval & setTimeout
 import java.util.Timer;
 import java.util.TimerTask;
 

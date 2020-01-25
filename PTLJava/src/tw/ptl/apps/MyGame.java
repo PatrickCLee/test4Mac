@@ -42,11 +42,11 @@ public class MyGame extends JFrame{
 			timer.schedule(new RefreshTask(), 0, 16);
 			
 			try {
-				ballImg = ImageIO.read(new File("dir2/emoji.png"));
+				ballImg = ImageIO.read(new File("dir2/emoji2.png"));
 				ballW = ballImg.getWidth();
 				ballH = ballImg.getHeight();
 			} catch (IOException e) {
-
+				System.out.println(e);
 			}
 		}
 		private class RefreshTask extends TimerTask{

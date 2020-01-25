@@ -1,5 +1,5 @@
 package tw.ptl.apps;
-
+// Thread 執行緒, Runnable
 public class PTL72 {
 
 	public static void main(String[] args) {
