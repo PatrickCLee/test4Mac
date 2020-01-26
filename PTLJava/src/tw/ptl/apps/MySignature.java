@@ -97,7 +97,7 @@ public class MySignature extends JFrame{
 
 	private void changeColor() {
 		Color newColor = JColorChooser.showDialog(this, "change color", myDrawer.getLineColor());
-		if (newColor != null) {
+		if (newColor != null) {			// 若popup視窗選擇cancel或關掉就會等於null
 			myDrawer.setLineColor(newColor);
 		}
 	}

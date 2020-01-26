@@ -82,7 +82,7 @@ public class MyDrawer extends JPanel{	//繼承JPanel, MyD可稱為自訂視窗�
 			repaint();			
 		}
 	}
-	public void saveJPEG(File file) {			//要存JFrame可用print(Graphics g), 所以以下流程
+	public void saveJPEG(File file) {			//google save jframe to image, 抄自 https://stackoverflow.com/questions/4725320/how-to-save-window-contents-as-an-image
 		BufferedImage img = new BufferedImage(	//記憶體創出空白畫布 
 				getWidth(), getHeight(), 
 				BufferedImage.TYPE_INT_RGB);

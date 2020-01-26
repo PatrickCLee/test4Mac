@@ -39,7 +39,7 @@ public class MyGame extends JFrame{
 		public MyPanel() {
 			addMouseListener(new MyMouseAdapter());
 			timer = new Timer();
-			timer.schedule(new RefreshTask(), 0, 16);
+			timer.schedule(new RefreshTask(), 0, 16);	//專門達成FPS60的一行
 			
 			try {
 				ballImg = ImageIO.read(new File("dir2/emoji2.png"));
@@ -49,7 +49,7 @@ public class MyGame extends JFrame{
 				System.out.println(e);
 			}
 		}
-		private class RefreshTask extends TimerTask{
+		private class RefreshTask extends TimerTask{	//拿來做FPS60的class
 			@Override
 			public void run() {
 				repaint();
@@ -66,22 +66,22 @@ public class MyGame extends JFrame{
 			}
 			@Override
 			public void run() {
-				if(ballX < 0 || ballX + ballW > myWidth) {
+				if(ballX < 0 || ballX + ballW > myWidth) {	//碰壁反彈
 					dx *= -1;
 				}
-				if(ballY < 0 || ballY + ballH > myHeight) {
+				if(ballY < 0 || ballY + ballH > myHeight) {	//碰壁反彈
 					dy *= -1;
 				}
-				ballX += dx;
-				ballY += dy;
+				ballX += dx;								//移動
+				ballY += dy;								
 //				repaint();				若多顆球時會一直repaint, 故挪出去
 			}
 		}
 		
 		private class MyMouseAdapter extends MouseAdapter {
 			public void mouseClicked(MouseEvent e) {
-				BallTask ball = new BallTask(e.getX()-ballW/2, e.getY()-ballH/2);
-				timer.schedule(ball, 1000, 30);
+				BallTask ball = new BallTask(e.getX()-ballW/2, e.getY()-ballH/2);//起始位置(圖片出現位置)為滑鼠按下的位置, 圖片最左上角為0,0 ,故要再減去寬高
+				timer.schedule(ball, 1000, 30);		//
 				balls.add(ball);
 			}
 		}
