@@ -36,14 +36,14 @@ public class Racing extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	private Car[] cars = new Car[8];	//每條lanes(視窗)都有一台車
-	private int winner = 1;
+	
 	private void go() {					//按下go後做的事
 		go.setEnabled(false);			//按下go後disable按鈕
 		// new Round
-		for(int i=0; i<lanes.length; i++) {	//清理lanes, 後來加入, 有此才可重複玩
+		for(int i=0; i<lanes.length; i++) {	//清理lanes, 有此才可重複玩
 			lanes[i].setText((i+1) + ".");
 		}
-		for(int i=0; i<cars.length; i++) {	
+		for(int i=0; i<cars.length; i++) {	//創造Car, 同時分配跑道, 跑道供run()底下使用 
 			cars[i] = new Car(i);
 		}
 		for(int i=0; i<cars.length; i++) {	//也可跟上一個for loop合併
@@ -55,10 +55,10 @@ public class Racing extends JFrame{
 		private int lane;			//一台車一條跑道
 		Car(int lane){this.lane = lane;}	
 		@Override
-		public void run() {
+		public void run() {		//**繼承Thread就是要寫run(), 表現生命的方式(活的時候要做的事)
 			for(int i=0; i<100; i++) {
 				if(i==99) {
-					lanes[lane].setText(lanes[lane].getText() + ">" + winner);	//(int)rank預設值為0					
+					lanes[lane].setText(lanes[lane].getText() + ">" + "No1");	//**lanes[lane]讓車和lanes正式扯上關係				
 					stopRound();				//一個到終點就結束比賽
 				}else {
 					lanes[lane].setText(lanes[lane].getText() + ">");	//無append方法故取得現值再+上
