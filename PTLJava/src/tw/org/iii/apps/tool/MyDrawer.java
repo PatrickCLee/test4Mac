@@ -118,7 +118,7 @@ public class MyDrawer extends JPanel{	//繼承JPanel, MyD可稱為自訂視窗�
 		color = newColor;
 		repaint();
 	}
-	public Color getLineColor() {return color;}	//讓MySig可以抓到color
+	public Color getLineColor() {return color;}	//讓MySig可以抓到color test
 	
 	private class MyMouseListener extends MouseAdapter{	//內部類別
 		@Override
