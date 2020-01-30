@@ -80,7 +80,7 @@ public class MyEditor extends JFrame{
 	
 	private File file;								//原名為openFile易混淆，故更名
 	
-	private void openFile() {						//開檔
+	private void openFile() {						//開啟舊檔
 		JFileChooser jfc = new JFileChooser(new File("."));	//JFC要接File，File從本層開始"."
 		if(jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {//jfc的SOD method回傳int為該類別定義的常數
 			file = jfc.getSelectedFile();						//上行意思為如果popup的視窗傳回值為approve動作則...
